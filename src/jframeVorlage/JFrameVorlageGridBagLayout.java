@@ -1,4 +1,4 @@
-package jframeVorlage;
+package jframeVorlage; 
 
 import java.awt.Container;
 import java.awt.Dimension;
