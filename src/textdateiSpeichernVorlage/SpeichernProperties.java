@@ -19,12 +19,11 @@ import java.util.Properties;
  */
 public class SpeichernProperties {
 	
-	BufferedReader br;
-	BufferedWriter bw;
-	Properties prop;
+	private BufferedWriter bw;
+	private Properties prop;
 	
 	public SpeichernProperties() {
-		ladeDatei("testdatei.txt");
+		ladeDatei("files/testdatei.txt");
 		schreiben("Brandenburg", "Potsdam");
 		schreiben("Hessen", "Wiesbaden");
 		schreiben("Erde", "Dabendorf");
@@ -71,7 +70,7 @@ public class SpeichernProperties {
 				temp += ",";
 			}
 			prop.setProperty(key, temp);
-			bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("testdatei.txt"), Charset.forName("UTF-8")));
+			bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("files/testdatei.txt"), Charset.forName("UTF-8")));
 			prop.store(bw, "Gespeicherte Werte");
 		} catch(IOException e) {
 			e.printStackTrace();
@@ -97,5 +96,4 @@ public class SpeichernProperties {
 	public static void main(String[] args) {
 		new SpeichernProperties();
 	}
-
 }
